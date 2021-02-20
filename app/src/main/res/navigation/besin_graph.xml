@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/besin_graph"
+    app:startDestination="@id/besinListesi">
+
+    <fragment
+        android:id="@+id/besinListesi"
+        android:name="com.gok.besinlerkitabi.view.BesinListesi"
+        android:label="BesinListesi" >
+        <action
+            android:id="@+id/action_besinListesi_to_besinDegerleri"
+            app:destination="@id/besinDegerleri" />
+    </fragment>
+    <fragment
+        android:id="@+id/besinDegerleri"
+        android:name="com.gok.besinlerkitabi.view.BesinDegerleri"
+        android:label="BesinDegerleri" >
+        <action
+            android:id="@+id/action_besinDegerleri_to_besinListesi"
+            app:destination="@id/besinListesi" />
+        <argument
+            android:name="besinId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
